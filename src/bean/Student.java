@@ -35,4 +35,11 @@ public class Student {
 		this.birthday = birthday;
 	}
 
+	public Student(int id, String name, Date birthday) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.birthday = birthday;
+	}
+
 }

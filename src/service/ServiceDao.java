@@ -1,8 +1,9 @@
-package studentDao;
+package service;
 
 import bean.Student;
 
-public interface StudentDao {
+public interface ServiceDao {
+	
 	public boolean login();
 	public void query();
 	public void  queryById(int a);
@@ -10,5 +11,4 @@ public interface StudentDao {
 	public void change(Student s,int id);
 	public void delById(int id);
 	public void charge(int a);
-	
 }
