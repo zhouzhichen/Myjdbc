@@ -33,6 +33,21 @@ public class StudentDaoImpl {
 		String sql = "select * from student";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		/*
+		 * RowSet和ResultSet的区别，RowSet存在于缓存当中，即使connection关闭也可以从数据库当中得到数据
+		 * RowSet的建立方式:
+		 * RowSetFactory rsf=RowSetProvider.newFactory();
+		 * CachedRowSet crs=rsf.createCachedRowSet();
+		 * crs.populate(rs);   这里是把ResultSet里面的内容放到自己的缓存区里面，所以后面即使断开连接，RowSet也可以读到数据。
+		 * RowSet就可以当做ResultSet来使用了，也不用关心Connection是否关闭。
+		 * 
+		 * 还可以利用CachedRowSet直接建立离线查找：（在没有建立Connection的情况下,驱动也不需要建立）
+		 * crs.setURL("url");
+		 * crs.setUserame("user");
+		 * crs.setPassword("password");
+		 * crs.setCommand("select * from student");
+		 * crs.executeQuery();
+		 */
 		try {
 			pstmt = c.prepareStatement(sql);
 			rs = pstmt.executeQuery();

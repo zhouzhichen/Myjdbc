@@ -50,6 +50,8 @@ public class DBCPTest {
 	}
 
 	// 方法Test1的改进，用工厂模式
+	
+	
 	public void Test2() {
 		try {
 			// 创建配置对象
